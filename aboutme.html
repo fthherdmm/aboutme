@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Fatih Erdem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 5%;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .card {
+            width: 500px;
+            height: 300px;
+            perspective: 1200px;
+            cursor: pointer;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            font-size: 1.3em;
+            padding: 30px;
+            text-align: center;
+            transition: background 0.3s ease-in-out;
+        }
+        .card-front {
+            background: #444;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        .card-back {
+            background: white;
+            color: #444;
+            transform: rotateY(180deg);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+        .card:hover .card-front {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">Who am I?</div>
+                <div class="card-back">
+                    My name is Muhammed Fatih Erdem. I am a 4th year Computer Engineering student with a strong passion for technology and innovation. I enjoy problem-solving, developing creative solutions, and continuously improving my skills in the field of software engineering.
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">My Interests</div>
+                <div class="card-back">
+                    I am deeply interested in software development, particularly in game development and artificial intelligence. I love creating interactive and immersive experiences that challenge the norm and bring innovative ideas to life. Exploring new technologies and expanding my knowledge in the tech world excites me.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
